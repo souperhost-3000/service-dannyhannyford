@@ -19,8 +19,7 @@
     "url": "https://github.com/souperhost-3000/service-dannyhannyford/issues"
   },
   "homepage": "https://github.com/souperhost-3000/service-dannyhannyford#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
   }

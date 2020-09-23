@@ -5,7 +5,7 @@
 npm
 npm-debug.log
 node_modules/
-
+maps.config.js
 pids
 *.pid
 logs

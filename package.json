@@ -1,5 +1,5 @@
 {
-  "name": "proxy-dannyhannyford",
+  "name": "service-dannyhannyford",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/superhost-3000/proxy-dannyhannyford.git"
+    "url": "git+https://github.com/souperhost-3000/service-dannyhannyford.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/superhost-3000/proxy-dannyhannyford/issues"
+    "url": "https://github.com/souperhost-3000/service-dannyhannyford/issues"
   },
-  "homepage": "https://github.com/superhost-3000/proxy-dannyhannyford#readme",
+  "homepage": "https://github.com/souperhost-3000/service-dannyhannyford#readme",
   "dependencies": {
   },
   "devDependencies": {

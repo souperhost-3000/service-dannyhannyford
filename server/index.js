@@ -13,5 +13,6 @@ app.use(express.static(PUBLIC_DIR));
 // });
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log('listening on port: ', port);
 });

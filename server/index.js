@@ -5,7 +5,7 @@ const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 
 const port = 3007;
 const app = express();
-
+// const db = require('../database/index.js');
 app.use(express.static(PUBLIC_DIR));
 
 // app.get('/', (req, res) => {
@@ -13,5 +13,6 @@ app.use(express.static(PUBLIC_DIR));
 // });
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log('listening on port: ', port);
 });

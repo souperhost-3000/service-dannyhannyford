@@ -1,1 +1,3 @@
 bundle.js
+jest.config.js
+sum.test.js

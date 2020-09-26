@@ -7,7 +7,7 @@ module.exports = {
 
   // Stop running tests after `n` failures
   // bail: 0,
-
+  setupFilesAfterEnv: ["<rootDir>client/src/setupTests.jsx"],
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/tmp/jest_rs",
 
@@ -69,14 +69,13 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   "js",
-  //   "json",
-  //   "jsx",
-  //   "ts",
-  //   "tsx",
-  //   "node"
-  // ],
+  moduleFileExtensions: [
+    "js",
+    "jsx",
+    "ts",
+    "tsx",
+    "node"
+  ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},

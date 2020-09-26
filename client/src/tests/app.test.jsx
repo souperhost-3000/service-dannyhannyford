@@ -1,12 +1,11 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-
 import App from '../components/App';
 
 describe('A suite', () => {
   it('should render without throwing an error', () => {
-    expect(shallow(<App />).contains(<div className="app">Bar</div>)).toBe(true);
+    expect(shallow(<App />).contains(<div className="app">Hello</div>)).toBe(true);
   });
   it('should be selectable by class "app"', () => {
     expect(shallow(<App />).is('.app')).toBe(true);
@@ -16,6 +15,6 @@ describe('A suite', () => {
   });
 
   it('should render to static HTML', () => {
-    expect(render(<App />).text()).toEqual('Bar');
+    expect(render(<App />).text()).toEqual('Hello');
   });
 });

@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(express.static(PUBLIC_DIR));
 
 app.get('/listings/:listing_id', (req, res) => {
-  const { listing_id } = req.params;
-  Place.findOne({ 'listing_id': listing_id })
+  const id = req.params.listing_id;
+  Place.findOne({ listing_id: id })
     .then((data) => res.send(data))
     .catch((err) => res.send(err));
 });

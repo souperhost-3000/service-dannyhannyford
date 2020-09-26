@@ -1,6 +1,6 @@
 # service-dannyhannyford
 
-[![souperhost-3000](https://circleci.com/gh/souperhost-3000/service-dannyhannyford/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/souperhost-3000/service-dannyhannyford/tree/circleci-project-setup)
+[![souperhost-3000](https://circleci.com/gh/souperhost-3000/service-dannyhannyford/tree/circleci-project-setup.svg?style=shield)](https://circleci.com/gh/souperhost-3000/service-dannyhannyford/tree/circleci-project-setup)
 
 # Project Name
 

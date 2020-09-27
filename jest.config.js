@@ -4,7 +4,9 @@
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
-
+  moduleNameMapper: {
+    '\\.(css|less)$': '<rootDir>client/src/tests/__mocks__/styleMock.js',
+  },
   // Stop running tests after `n` failures
   // bail: 0,
   setupFilesAfterEnv: ["<rootDir>client/src/setupTests.jsx"],
@@ -74,7 +76,8 @@ module.exports = {
     "jsx",
     "ts",
     "tsx",
-    "node"
+    "node",
+    "css",
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module

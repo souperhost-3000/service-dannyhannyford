@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 const faker = require('faker');
 const mongoose = require('mongoose');
-require('./index.js');
+// eslint-disable-next-line no-unused-vars
+const db = require('./index.js');
 const { Place } = require('./Place.js');
 
 const arrangement = ['Hotel room',

@@ -13,7 +13,6 @@
     "test": "jest --coverage",
     "seed": "node database/seed.js"
   },
-  "jest": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/souperhost-3000/service-dannyhannyford.git"

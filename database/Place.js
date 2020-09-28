@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-require('./index.js');
+// eslint-disable-next-line no-unused-vars
+const db = require('./index.js');
 
 mongoose.Promise = global.Promise;
 

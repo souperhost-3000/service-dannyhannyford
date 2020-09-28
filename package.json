@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
-    "test": "jest --coverage --detectOpenHandles",
+    "test": "jest --coverage",
     "seed": "node database/seed.js"
   },
   "jest": {

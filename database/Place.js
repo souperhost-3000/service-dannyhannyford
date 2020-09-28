@@ -4,7 +4,7 @@ require('./index.js');
 mongoose.Promise = global.Promise;
 
 const placeSchema = new mongoose.Schema({
-  listing_id: { type: Number, unique: true },
+  listing_id: Number,
   place_title: String,
   sleeping_arrangement: String,
   price: Number,

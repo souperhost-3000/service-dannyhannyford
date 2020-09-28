@@ -29,9 +29,8 @@ app.get('/api/listings', (req, res) => {
 request(app)
   .get('/api/listings')
   .expect(200)
-  .end((err, res) => {
+  .end((err) => {
     if (err) throw err;
-    else console.log(res.body);
   });
 
 app.listen(port, () => {

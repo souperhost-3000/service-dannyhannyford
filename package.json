@@ -13,9 +13,6 @@
     "seed": "node database/seed.js"
   },
   "jest": {
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
   },
   "repository": {
     "type": "git",

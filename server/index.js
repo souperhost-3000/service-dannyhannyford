@@ -18,6 +18,13 @@ app.get('/api/listings/:listing_id', (req, res) => {
     .catch((err) => res.send(err));
 });
 
+app.post('/api/listings:listing_id', (req, res) => {
+  const listing = req.body;
+  Place.create(listing)
+    .then(res.send(200))
+    .catch((err) => res.send(err));
+});
+
 app.get('/api/listings', (req, res) => {
   Place.find()
     .then((data) => res.send(data))

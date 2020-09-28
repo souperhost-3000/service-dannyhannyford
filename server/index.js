@@ -1,4 +1,4 @@
-const request = require('supertest');
+// const request = require('supertest');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -6,7 +6,7 @@ const { Place } = require('../database/Place.js');
 
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 
-const port = 3007;
+const PORT = process.env.PORT || 3007;
 const app = express();
 
 app.use(bodyParser.json());
@@ -25,17 +25,11 @@ app.get('/api/listings', (req, res) => {
     .catch((err) => res.send(err));
 });
 
-// get test for
-request(app)
-  .get('/api/listings')
-  .expect(200)
-  .end((err) => {
-    if (err) throw err;
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    // eslint-disable-next-line no-console
+    console.log('listening on port: ', PORT);
   });
-
-app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  console.log('listening on port: ', port);
-});
+}
 
 module.exports = app;

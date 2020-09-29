@@ -3,20 +3,22 @@ import CurrentPage from './CurrentPage';
 import '../style.css';
 
 const simpleData = [];
-for (let i = 0; i < 100; i += 1) {
-  simpleData.push(i);
+for (let i = 1; i <= 100; i += 1) {
+  simpleData.push(`https://souperhost.s3-us-west-2.amazonaws.com/stay${i}.jpg`);
 }
 
 const Carousel = () => {
-  // set to empty array when you have axios running
-  const [slides, setSlides] = useState(simpleData);
   // prev, curr, next 4 slides
-  const [currSlide, setCurrSlide] = useState(slides.slice(0, 4));
-  const [prevSlide, setPrevSlide] = useState(currSlide);
-  const [nextSlide, setNextSlide] = useState(slides.slice(4, 8));
+  const [prevSlide, setPrevSlide] = useState(
+    simpleData.slice(simpleData.length - 4, simpleData.length),
+  );
+  const [currSlide, setCurrSlide] = useState(simpleData.slice(0, 4));
+  const [nextSlide, setNextSlide] = useState(simpleData.slice(4, 8));
   const [slideIdx, setSlideIdx] = useState(1);
 
-  const maxPages = Math.ceil(slides.length / 4);
+  const maxPages = Math.ceil(simpleData.length / 4);
+
+  const getWidth = () => window.innerWidth;
 
   const handlePrev = () => {
     if (slideIdx !== 1) {
@@ -38,10 +40,15 @@ const Carousel = () => {
   const next = '>';
   return (
     <div>
-      <h1>More places to stay</h1>
-      <CurrentPage currPage={slideIdx} lastPage={maxPages} />
-      <button type="button" onClick={handlePrev}>{prev}</button>
-      <button type="button" onClick={handleNext}>{next}</button>
+      <div>
+        <h1>More places to stay</h1>
+        <CurrentPage currPage={slideIdx} lastPage={maxPages} />
+        <button type="button" onClick={handlePrev}>{prev}</button>
+        <button type="button" onClick={handleNext}>{next}</button>
+      </div>
+      <div>
+        <SlideList />
+      </div>
     </div>
   );
 };

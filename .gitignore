@@ -24,3 +24,4 @@ build/
 dist/
 #
 public/bundle.js
+globalConfig.json

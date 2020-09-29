@@ -4,5 +4,16 @@ div {
 }
 
 h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #222222;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #222222;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
   color: #222222;
 }

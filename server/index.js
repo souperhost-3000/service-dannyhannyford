@@ -10,6 +10,9 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(express.static(PUBLIC_DIR));
+app.get('/', (req, res) => {
+  res.send(200);
+});
 
 app.get('/api/listings/:listing_id', (req, res) => {
   const id = req.params.listing_id;

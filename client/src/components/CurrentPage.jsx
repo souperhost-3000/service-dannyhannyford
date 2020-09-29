@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import '../style.css';
 
-const CurrentPage = ({currPage, lastPage}) => (
+const CurrentPage = ({ currPage, lastPage }) => (
   <>
     <h2>{`${currPage}/${lastPage}`}</h2>
   </>

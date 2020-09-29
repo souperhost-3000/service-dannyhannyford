@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CurrentPage from './CurrentPage';
+import SlideList from './SlideList';
 import '../style.css';
-
-const simpleData = [];
-for (let i = 1; i <= 100; i += 1) {
-  simpleData.push(`https://souperhost.s3-us-west-2.amazonaws.com/stay${i}.jpg`);
-}
+import sampleData from './sampleData';
 
 const Carousel = () => {
   // prev, curr, next 4 slides
-  const [prevSlide, setPrevSlide] = useState(
-    simpleData.slice(simpleData.length - 4, simpleData.length),
-  );
-  const [currSlide, setCurrSlide] = useState(simpleData.slice(0, 4));
-  const [nextSlide, setNextSlide] = useState(simpleData.slice(4, 8));
+  let prevSlide = sampleData.slice(sampleData.length - 4, sampleData.length);
+  let currSlide = sampleData.slice(0, 4);
+  let nextSlide = sampleData.slice(4, 8);
+  const [bigSlide, setBigSlide] = useState([[prevSlide], [currSlide], [nextSlide]]);
   const [slideIdx, setSlideIdx] = useState(1);
 
-  const maxPages = Math.ceil(simpleData.length / 4);
+  const maxPages = Math.ceil(sampleData.length / 4);
+
+  useEffect(() => {
+    // on change set all 3 slides
+    const currEnd = slideIdx * 4;
+    currSlide = sampleData.slice(currEnd - 4, currEnd);
+    if (slideIdx === 1) {
+      prevSlide = sampleData.slice((maxPages * 4) - 4, maxPages * 4);
+      nextSlide = sampleData.slice(currEnd, currEnd + 4);
+    } else if (slideIdx === maxPages) {
+      nextSlide = sampleData.slice(0, 4);
+      prevSlide = sampleData.slice(currEnd - 8, currEnd - 4);
+    } else {
+      prevSlide = sampleData.slice(currEnd - 8, currEnd - 4);
+      nextSlide = sampleData.slice(currEnd, currEnd + 4);
+    }
+    setBigSlide([[prevSlide], [currSlide], [nextSlide]]);
+  }, [slideIdx]);
 
   const getWidth = () => window.innerWidth;
 
@@ -47,7 +60,7 @@ const Carousel = () => {
         <button type="button" onClick={handleNext}>{next}</button>
       </div>
       <div>
-        <SlideList />
+        <SlideList slides={bigSlide} />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CurrentPage from './CurrentPage';
 import '../style.css';
 
 const simpleData = [];
@@ -29,6 +30,7 @@ const Carousel = () => {
   return (
     <div>
       <h1>More places to stay</h1>
+      <CurrentPage currPage={slideIdx} lastPage={maxPages} />
       <button type="button" onClick={handlePrev}>{prev}</button>
       <button type="button" onClick={handleNext}>{next}</button>
     </div>

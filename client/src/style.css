@@ -25,6 +25,7 @@ body {
   width: 100%;
 }
 div {
+  margin: 0;
   padding-bottom: 0;
 }
 
@@ -132,7 +133,7 @@ header
   align-items: center !important;
   display: flex !important;
   white-space: nowrap !important;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 /*
@@ -142,7 +143,7 @@ Carousel
 */
 
 .display {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   display: flex !important;
   height: 100% !important;
   list-style: none !important;
@@ -154,17 +155,30 @@ Carousel
   scroll-snap-type: x mandatory !important;
 }
 
+.slideContainer {
+  min-width: 100% !important;
+  max-height: 100%;
+  box-sizing: border-box !important;
+  display: flex !important;
+  list-style-type: none !important;
+  padding-left: 0px !important;
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  scroll-snap-type: x mandatory !important;
+  justify-content:space-between !important;
+  transform: translateX(-100%);
+}
+
 .slide {
+  position: relative !important;
   border-radius: 8px !important;
   display: block !important;
   box-sizing: border-box;
   border-color: transparent !important;
-  scroll-snap-align: start !important;
-  scroll-snap-stop: always !important;
-  border-width: 0px 10px;
-  max-width: 23%;
-  flex: 0 0 23%;
-  margin: 0 1%;
+  border-width: 0px 10px !important;
+  max-width: calc(25% - 20px) !important;
+  flex: 0 0 calc(25% - 20px) !important;
+  margin: 0 10px;
 }
 
 .image {

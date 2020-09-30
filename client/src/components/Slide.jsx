@@ -9,6 +9,7 @@ const Slide = ({ slide }) => (
   <li className="slide">
     <img className="image" src={slide.image} alt="house" />
     <div className="review_nums">
+      <img className="star" alt="" src="https://souperhost.s3-us-west-2.amazonaws.com/star2.png" />
       <div className="avg">{slide.review_average}</div>
       <div className="review_count">{`(${slide.review_count})`}</div>
     </div>

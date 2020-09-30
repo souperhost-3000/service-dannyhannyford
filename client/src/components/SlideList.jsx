@@ -3,16 +3,15 @@ import Slide from './Slide';
 import '../style.css';
 
 const SlideList = ({ slides }) => (
-  <div className="display">
-    {slides.map((fourPack) => (fourPack.map((slide, sdx) => (
+  <ul className="display">
+    {slides.map((slide, idx) => (
       <Slide
         // eslint-disable-next-line react/no-array-index-key
-        key={sdx}
+        key={idx}
         slide={slide}
       />
-    ))
     ))}
-  </div>
+  </ul>
 );
 
 export default SlideList;

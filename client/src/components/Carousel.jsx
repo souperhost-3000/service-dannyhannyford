@@ -9,7 +9,7 @@ const Carousel = () => {
   let prevSlide = sampleData.slice(sampleData.length - 4, sampleData.length);
   let currSlide = sampleData.slice(0, 4);
   let nextSlide = sampleData.slice(4, 8);
-  const [bigSlide, setBigSlide] = useState([[prevSlide], [currSlide], [nextSlide]]);
+  const [bigSlide, setBigSlide] = useState([prevSlide.concat(currSlide, nextSlide)]);
   const [slideIdx, setSlideIdx] = useState(1);
 
   const maxPages = Math.ceil(sampleData.length / 4);
@@ -28,7 +28,7 @@ const Carousel = () => {
       prevSlide = sampleData.slice(currEnd - 8, currEnd - 4);
       nextSlide = sampleData.slice(currEnd, currEnd + 4);
     }
-    setBigSlide([[prevSlide], [currSlide], [nextSlide]]);
+    setBigSlide(prevSlide.concat(currSlide, nextSlide));
   }, [slideIdx]);
 
   const getWidth = () => window.innerWidth;

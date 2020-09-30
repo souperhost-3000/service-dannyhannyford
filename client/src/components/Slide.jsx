@@ -1,22 +1,26 @@
 import React from 'react';
 import '../style.css';
 
+// review_count: 145,
+// review_average: 4.85,
+// price: 426,
+
 const Slide = ({ slide }) => (
-  <div className="slideBlock">
-    {/* {console.log(slide)} */}
-    <div className="slide">
-      <img className="image" src={slide[0]} alt="house" />
+  <li className="slide">
+    <img className="image" src={slide.image} alt="house" />
+    <div className="review_nums">
+      <div className="avg">{slide.review_average}</div>
+      <div className="review_count">{`(${slide.review_count})`}</div>
     </div>
-    <div className="slide">
-      <img className="image" src={slide[1]} alt="house" />
+    <div className="place_title">{slide.place_title}</div>
+    <div className="place_title">{slide.sleeping_arrangement}</div>
+    <div className="review_nums">
+      <div className="price">
+        {`$${slide.price}`}
+      </div>
+      <span className="night"> / night</span>
     </div>
-    <div className="slide">
-      <img className="image" src={slide[2]} alt="house" />
-    </div>
-    <div className="slide">
-      <img className="image" src={slide[3]} alt="house" />
-    </div>
-  </div>
+  </li>
 );
 
 export default Slide;

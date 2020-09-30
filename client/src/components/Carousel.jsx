@@ -1,32 +1,44 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import CurrentPage from './CurrentPage';
 import SlideList from './SlideList';
 import '../style.css';
-import sampleData from './sampleData';
+// import listingData from './listingData';
 
 const Carousel = () => {
   // prev, curr, next 4 slides
-  let prevSlide = sampleData.slice(sampleData.length - 4, sampleData.length);
-  let currSlide = sampleData.slice(0, 4);
-  let nextSlide = sampleData.slice(4, 8);
-  const [bigSlide, setBigSlide] = useState([prevSlide.concat(currSlide, nextSlide)]);
+  const [listingData, setListingData] = useState([]);
+  const [bigSlide, setBigSlide] = useState([]);
   const [slideIdx, setSlideIdx] = useState(1);
+  const maxPages = Math.ceil(listingData.length / 4);
 
-  const maxPages = Math.ceil(sampleData.length / 4);
+  useEffect(() => {
+    axios.get('/api/listings')
+      .then(({ data }) => setListingData(data))
+      .catch((err) => console.log(err));
+  }, []);
 
+  useEffect(() => {
+    const prevSlide = listingData.slice(listingData.length - 4, listingData.length);
+    const currSlide = listingData.slice(0, 4);
+    const nextSlide = listingData.slice(4, 8);
+    setBigSlide(prevSlide.concat(currSlide, nextSlide));
+  }, [listingData]);
   useEffect(() => {
     // on change set all 3 slides
     const currEnd = slideIdx * 4;
-    currSlide = sampleData.slice(currEnd - 4, currEnd);
+    const currSlide = listingData.slice(currEnd - 4, currEnd);
+    let prevSlide;
+    let nextSlide;
     if (slideIdx === 1) {
-      prevSlide = sampleData.slice((maxPages * 4) - 4, maxPages * 4);
-      nextSlide = sampleData.slice(currEnd, currEnd + 4);
+      prevSlide = listingData.slice((maxPages * 4) - 4, maxPages * 4);
+      nextSlide = listingData.slice(currEnd, currEnd + 4);
     } else if (slideIdx === maxPages) {
-      nextSlide = sampleData.slice(0, 4);
-      prevSlide = sampleData.slice(currEnd - 8, currEnd - 4);
+      nextSlide = listingData.slice(0, 4);
+      prevSlide = listingData.slice(currEnd - 8, currEnd - 4);
     } else {
-      prevSlide = sampleData.slice(currEnd - 8, currEnd - 4);
-      nextSlide = sampleData.slice(currEnd, currEnd + 4);
+      prevSlide = listingData.slice(currEnd - 8, currEnd - 4);
+      nextSlide = listingData.slice(currEnd, currEnd + 4);
     }
     setBigSlide(prevSlide.concat(currSlide, nextSlide));
   }, [slideIdx]);

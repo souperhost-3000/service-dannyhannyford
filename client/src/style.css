@@ -134,24 +134,54 @@ Carousel
 */
 
 .display {
-  position: relative;
-  height: 25vh;
+  white-space:nowrap !important;
+  /* position: relative;
+
+  -webkit-box-pack: justify !important;
+  -webkit-box-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 24px !important;
+  overflow: hidden; */
+  /* position: relative;
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .slideBlock {
-
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% - 40px));
+  grid-template-rows: minmax(150px, 1fr);
+  grid-gap: 10px;
+  /* width: 100% !important;
+  position: relative;
+  -webkit-box-pack: justify !important;
+  -webkit-box-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 24px !important;
+  border: 0;
+  margin: 0; */
 }
 .slide {
+  display: grid;
+  grid-gap: 10px;
   cursor: pointer !important;
-  border-right: 10px;
-  border-left: 10px;
+  /* border-right: 10px !important;
+  border-left: 10px !important; */
   /* height: 25;
   width: 25%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; */
 
+}
+
+.image {
+  display: grid;
+  margin: 0;
+  padding: 0;
 }

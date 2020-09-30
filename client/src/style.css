@@ -178,7 +178,9 @@ slide text
 */
 
 .star {
-
+  max-width: 14px;
+  max-height: 14px;
+  margin-right: 3px;
 }
 
 .avg {

@@ -3,7 +3,7 @@ import '../style.css';
 
 const CurrentPage = ({ currPage, lastPage }) => (
   <>
-    <h2>{`${currPage}/${lastPage}`}</h2>
+    <div className="page">{`${currPage} / ${lastPage}`}</div>
   </>
 );
 

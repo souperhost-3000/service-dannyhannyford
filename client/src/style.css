@@ -186,6 +186,10 @@ slide text
   max-width: 14px;
   max-height: 14px;
   margin-right: 3px;
+  margin-bottom: 1px;
+  -webkit-box-align: center !important;
+  align-items: center !important;
+
 }
 
 .avg {

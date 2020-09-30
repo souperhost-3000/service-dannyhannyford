@@ -53,11 +53,31 @@ const Carousel = () => {
   const next = '>';
   return (
     <div>
-      <div>
-        <h1>More places to stay</h1>
-        <CurrentPage currPage={slideIdx} lastPage={maxPages} />
-        <button type="button" onClick={handlePrev}>{prev}</button>
-        <button type="button" onClick={handleNext}>{next}</button>
+      <div className="header">
+        <div className="title">
+          <h2>More places to stay</h2>
+        </div>
+        <div className="rightSide">
+          <CurrentPage currPage={slideIdx} lastPage={maxPages} />
+          <div className="lbtndiv">
+            <button
+              className="lbtn"
+              type="button"
+              onClick={handlePrev}
+            >
+              <span className="spanner">{prev}</span>
+            </button>
+          </div>
+          <div className="rbtndiv">
+            <button
+              className="rbtn"
+              type="button"
+              onClick={handleNext}
+            >
+              <span className="spanner">{next}</span>
+            </button>
+          </div>
+        </div>
       </div>
       <div>
         <SlideList slides={bigSlide} />

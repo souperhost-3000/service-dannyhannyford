@@ -7,7 +7,16 @@ import '../style.css';
 
 const Slide = ({ slide }) => (
   <li className="slide">
-    <img className="image" src={slide.image} alt="house" />
+    <div className="imageContainer">
+      <div className="heartShapedBox">
+        <img className="heart" src="https://souperhost.s3-us-west-2.amazonaws.com/instagram-icon-24x24-27.jpg" alt="" />
+        <img className="pink_heart" src="https://souperhost.s3-us-west-2.amazonaws.com/pinkheart.png" alt="" />
+      </div>
+      <div className="outline_box">
+        <img className="heart_outline" src="https://souperhost.s3-us-west-2.amazonaws.com/heart.png" alt="" />
+      </div>
+      <img className="image" src={slide.image} alt="house" />
+    </div>
     <div className="review_nums">
       <img className="star" alt="" src="https://souperhost.s3-us-west-2.amazonaws.com/star2.png" />
       <div className="avg">{slide.review_average}</div>

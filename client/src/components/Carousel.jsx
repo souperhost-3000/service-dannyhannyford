@@ -7,43 +7,30 @@ import '../style.css';
 
 const Carousel = () => {
   // prev, curr, next 4 slides
+
   const [listingData, setListingData] = useState([]);
-  const [bigSlide, setBigSlide] = useState([]);
   const [slideIdx, setSlideIdx] = useState(1);
+  const [style, setStyle] = useState({
+    transition: 'transform ease-out 0.45s',
+    transform: 'translateX(-0%)',
+  });
+
   const maxPages = Math.ceil(listingData.length / 4);
 
   useEffect(() => {
     axios.get('/api/listings')
       .then(({ data }) => setListingData(data))
+      // eslint-disable-next-line no-console
       .catch((err) => console.log(err));
   }, []);
 
+  // on change set all 3 slides
   useEffect(() => {
-    const prevSlide = listingData.slice(listingData.length - 4, listingData.length);
-    const currSlide = listingData.slice(0, 4);
-    const nextSlide = listingData.slice(4, 8);
-    setBigSlide(prevSlide.concat(currSlide, nextSlide));
-  }, [listingData]);
-  useEffect(() => {
-    // on change set all 3 slides
-    const currEnd = slideIdx * 4;
-    const currSlide = listingData.slice(currEnd - 4, currEnd);
-    let prevSlide;
-    let nextSlide;
-    if (slideIdx === 1) {
-      prevSlide = listingData.slice((maxPages * 4) - 4, maxPages * 4);
-      nextSlide = listingData.slice(currEnd, currEnd + 4);
-    } else if (slideIdx === maxPages) {
-      nextSlide = listingData.slice(0, 4);
-      prevSlide = listingData.slice(currEnd - 8, currEnd - 4);
-    } else {
-      prevSlide = listingData.slice(currEnd - 8, currEnd - 4);
-      nextSlide = listingData.slice(currEnd, currEnd + 4);
-    }
-    setBigSlide(prevSlide.concat(currSlide, nextSlide));
+    setStyle({
+      transition: 'transform ease-out 0.45s',
+      transform: `translateX(-${((slideIdx - 1) * 100)}%)`,
+    });
   }, [slideIdx]);
-
-  const getWidth = () => window.innerWidth;
 
   const handlePrev = () => {
     if (slideIdx !== 1) {
@@ -91,8 +78,11 @@ const Carousel = () => {
           </div>
         </div>
       </div>
-      <div>
-        <SlideList slides={bigSlide} />
+      <div className="display">
+        <SlideList
+          move={style}
+          slides={listingData}
+        />
       </div>
     </div>
   );

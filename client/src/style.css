@@ -166,7 +166,6 @@ Carousel
   margin-top: 0px !important;
   scroll-snap-type: x mandatory !important;
   justify-content:space-between !important;
-  transform: translateX(-100%);
 }
 
 .slide {

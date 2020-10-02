@@ -32,6 +32,15 @@ const Carousel = () => {
     });
   }, [slideIdx]);
 
+  const toggleSave = (slide) => {
+    const updatedSlide = slide;
+    updatedSlide.saved = !slide.saved;
+    const updatedData = [...listingData.slice(0, (slide.listing_id - 1)),
+      updatedSlide,
+      ...listingData.slice(slide.listing_id)];
+    setListingData(updatedData);
+  };
+
   const handlePrev = () => {
     if (slideIdx !== 1) {
       setSlideIdx(slideIdx - 1);
@@ -82,6 +91,7 @@ const Carousel = () => {
         <SlideList
           move={style}
           slides={listingData}
+          toggleSave={toggleSave}
         />
       </div>
     </div>

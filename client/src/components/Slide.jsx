@@ -5,15 +5,26 @@ import '../style.css';
 // review_average: 4.85,
 // price: 426,
 
-const Slide = ({ slide }) => (
+const Slide = ({ slide, toggleSave }) => (
   <li className="slide">
     <div className="imageContainer">
       <div className="heartShapedBox">
-        <img className="heart" src="https://souperhost.s3-us-west-2.amazonaws.com/instagram-icon-24x24-27.jpg" alt="" />
-        <img className="pink_heart" src="https://souperhost.s3-us-west-2.amazonaws.com/pinkheart.png" alt="" />
+        {slide.saved ? <img className="pink_heart" src="https://souperhost.s3-us-west-2.amazonaws.com/pinkheart.png" alt="" /> : (
+          <img
+            className="heart"
+            src="https://souperhost.s3-us-west-2.amazonaws.com/instagram-icon-24x24-27.jpg"
+            alt=""
+          />
+        )}
       </div>
       <div className="outline_box">
-        <img className="heart_outline" src="https://souperhost.s3-us-west-2.amazonaws.com/heart.png" alt="" />
+        <button
+          onClick={() => toggleSave(slide)}
+          className="heartButton"
+          type="button"
+        >
+          <img className="heart_outline" src="https://souperhost.s3-us-west-2.amazonaws.com/heart.png" alt="" />
+        </button>
       </div>
       <img className="image" src={slide.image} alt="house" />
     </div>

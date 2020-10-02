@@ -9,10 +9,11 @@ const arrangement = ['Hotel room',
   'Tiny house',
   'Entire House',
   'Entire apartment',
-  'Entire condominium',
   'Entire cabin',
   'Entire bungalow',
-  'Entire cottage'];
+  'Entire cottage',
+  'Private room',
+];
 
 const sampleData = [];
 

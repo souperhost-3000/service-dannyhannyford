@@ -4,7 +4,7 @@
 
 # AirBnB More places to stay
 
-> This react project mocks the "More places to stay" image carousel. The image carousel fetches it's data from MongoDB from the local server.
+> This react project mocks the "More places to stay" image carousel. The client fetches data with express connecting it to a mongoDB server.
 
 ## Related Projects
 

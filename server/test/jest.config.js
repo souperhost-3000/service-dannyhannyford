@@ -3,7 +3,7 @@ const root = resolve(__dirname, '..');
 
 module.exports = {
   roots: ['<rootDir>'],
-  displayName: 'server test',
+  displayName: 'Server',
   clearMocks: true,
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: [

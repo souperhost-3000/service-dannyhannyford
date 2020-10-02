@@ -1,6 +1,6 @@
 
 module.exports = {
-  displayName: 'fe tests',
+  displayName: 'Front End',
   projects: ['<rootDir>', '<rootDir>/server/test/jest.config.js'],
   roots:['<rootDir>/client/src'],
   testEnvironment: 'jsdom',

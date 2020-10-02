@@ -3,7 +3,6 @@ import axios from 'axios';
 import CurrentPage from './CurrentPage';
 import SlideList from './SlideList';
 import '../style.css';
-// import listingData from './listingData';
 
 const Carousel = () => {
   // prev, curr, next 4 slides

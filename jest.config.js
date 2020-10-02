@@ -1,7 +1,7 @@
 
 module.exports = {
   displayName: 'fe tests',
-  projects: ['<rootDir>', '<rootDir>/database/test/jest.config.js', '<rootDir>/server/test/jest.config.js'],
+  projects: ['<rootDir>', '<rootDir>/server/test/jest.config.js'],
   roots:['<rootDir>/client/src'],
   testEnvironment: 'jsdom',
   moduleNameMapper: {
@@ -27,3 +27,4 @@ module.exports = {
   },
    verbose: true,
 };
+// , '<rootDir>/database/test/jest.config.js'

@@ -4,10 +4,10 @@ import CurrentPage from './CurrentPage';
 import SlideList from './SlideList';
 import '../style.css';
 
-const Carousel = () => {
+const Carousel = ({ sampleData }) => {
   // prev, curr, next 4 slides
 
-  const [listingData, setListingData] = useState([]);
+  const [listingData, setListingData] = useState(sampleData || []);
   const [slideIdx, setSlideIdx] = useState(1);
   const [style, setStyle] = useState({
     transition: 'transform ease-out 0.45s',

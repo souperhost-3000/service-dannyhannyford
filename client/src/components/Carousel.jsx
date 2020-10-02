@@ -37,6 +37,7 @@ const Carousel = () => {
     const updatedData = [...listingData.slice(0, (slide.listing_id - 1)),
       updatedSlide,
       ...listingData.slice(slide.listing_id)];
+
     setListingData(updatedData);
   };
 

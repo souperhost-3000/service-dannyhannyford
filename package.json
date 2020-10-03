@@ -7,12 +7,12 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
-    "start-dev": "nodemon server/start.js",
+    "start": "nodemon server/start.js",
+    "start-dev": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "test": "jest --coverage",
     "seed": "node database/seed.js",
-    "watch-test": "jest --watch --coverage"
+    "watch-test": "jest --coverage --watch"
   },
   "repository": {
     "type": "git",

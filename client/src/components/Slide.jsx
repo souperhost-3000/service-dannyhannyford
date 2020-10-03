@@ -1,10 +1,6 @@
 import React from 'react';
 import '../style.css';
 
-// review_count: 145,
-// review_average: 4.85,
-// price: 426,
-
 const Slide = ({ slide, toggleSave }) => (
   <li className="slide">
     <div className="imageContainer">

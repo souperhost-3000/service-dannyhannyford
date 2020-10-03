@@ -47,7 +47,7 @@ header
 */
 .page {
   font-weight: 400 !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 18px !important;
   margin-right: 16px !important;
   color: #222222;
@@ -56,6 +56,7 @@ header
 .rbtndiv {
   margin-left: 6px !important;
 }
+
 .rbtn {
   -webkit-box-pack: center !important;
   -webkit-box-align: center !important;
@@ -77,6 +78,14 @@ header
   transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
   width: 32px !important;
   height: 32px !important;
+}
+
+.rbtn:hover {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
+  box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px !important;
+  transform: scale(1.04) !important;
 }
 .lbtndiv {
   margin-right: 6px !important;
@@ -102,6 +111,14 @@ header
   transition: box-shadow 0.2s ease 0s, -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s !important;
   width: 32px !important;
   height: 32px !important;
+}
+
+.lbtn:hover {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
+  box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px !important;
+  transform: scale(1.04) !important;
 }
 
 .spanner {

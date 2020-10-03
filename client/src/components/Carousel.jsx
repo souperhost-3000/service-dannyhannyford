@@ -8,8 +8,6 @@ import '../style.css';
 require('regenerator-runtime');
 
 const Carousel = () => {
-  // prev, curr, next 4 slides
-
   const [listingData, setListingData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [slideIdx, setSlideIdx] = useState(1);
@@ -76,7 +74,7 @@ const Carousel = () => {
     itemsToRender = (
       <div className="display">
         <SlideList
-          move={style}
+          style={style}
           slides={listingData}
           toggleSave={toggleSave}
         />

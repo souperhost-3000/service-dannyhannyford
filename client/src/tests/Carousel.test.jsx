@@ -16,9 +16,10 @@ describe('Carousel', () => {
       await axios.get.mockImplementationOnce(() => Promise.resolve(sampleData));
       wrapper = mount(<Carousel />);
     });
+    wrapper.update();
   });
 
-  it('should make an api call', async () => {
+  it('should mount after fetching data', async () => {
     await expect(wrapper.exists()).toBe(true);
     await expect(axios.get).toHaveBeenCalledWith('/api/listings');
     await expect(axios.get).toHaveBeenCalledTimes(1);

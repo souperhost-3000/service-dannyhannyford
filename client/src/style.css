@@ -212,6 +212,38 @@ image overlay
 =================
 */
 
+.souperhost_box {
+  top: 13px;
+  left: 10px;
+  min-width: 35%;
+  min-height: 9%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  color: rgb(34, 34, 34);
+  display: inline-flex !important;
+  vertical-align: top !important;
+  background-clip: padding-box !important;
+  max-width: 100% !important;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  position: absolute;
+  box-sizing: border-box;
+}
+.souperhost {
+  font-size: 12px !important;
+  line-height: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  max-height: 16px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  box-sizing: border-box;
+}
+
 .image {
   border-radius: 12px;
   object-fit: cover;
@@ -244,7 +276,7 @@ image overlay
   z-index: 1;
 }
 .heartShapedBox {
-  top: 12px;
+  top: 11px;
   right: 12px;
   max-width: 26px;
   max-height: 24px;
@@ -271,7 +303,7 @@ image overlay
 }
 
 .outline_box {
-  top: 15px;
+  top: 14px;
   right: 13px;
   max-width: 24px;
   max-height: 20px;

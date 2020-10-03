@@ -1,12 +1,11 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import App from '../components/App';
 import Carousel from '../components/Carousel';
-import CurrentPage from '../components/CurrentPage';
-import SlideList from '../components/SlideList';
+import sampleData from '../components/sampleData';
 
 describe('App suite', () => {
-  xit('should render without throwing an error', () => {
-    expect(shallow(<App />).contains(<div><Carousel /></div>)).toBe(true);
+  it('should render without throwing an error', () => {
+    expect(shallow(<App />).contains(<div><Carousel sampleData={sampleData} /></div>)).toBe(true);
   });
 });

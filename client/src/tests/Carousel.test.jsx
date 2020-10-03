@@ -1,17 +1,26 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import axios from 'axios';
+import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import Carousel from '../components/Carousel';
-import CurrentPage from '../components/CurrentPage';
-import SlideList from '../components/SlideList';
+import sampleData from '../components/sampleData';
 
-// it('renderes without crashing', () => {
-//   shallow(<Carousel />);
-// });
+require('regenerator-runtime');
 
-xit('should render CurrentPage and SlideList components', () => {
-  const wrapper = shallow(<Carousel />);
-  const currentPage = wrapper.find(CurrentPage);
-  const slideList = wrapper.find(SlideList);
-  // expect(currentPage.exists()).toBe(true);
-  expect(slideList.exists()).tobe(true);
+jest.mock('axios');
+
+describe('Carousel', () => {
+  let wrapper;
+  beforeEach(async () => {
+    await act(async () => {
+      await axios.get.mockImplementationOnce(() => Promise.resolve(sampleData));
+      wrapper = mount(<Carousel />);
+    });
+  });
+
+  it('should make an api call', async () => {
+    await expect(wrapper.exists()).toBe(true);
+    await expect(axios.get).toHaveBeenCalledWith('/api/listings');
+    await expect(axios.get).toHaveBeenCalledTimes(1);
+  });
 });

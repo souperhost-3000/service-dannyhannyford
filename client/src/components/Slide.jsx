@@ -4,6 +4,11 @@ import '../style.css';
 const Slide = ({ slide, toggleSave }) => (
   <li className="slide">
     <div className="imageContainer">
+      {slide.superhost && (
+        <div className="souperhost_box">
+          <div className="souperhost">SOUPERHOST</div>
+        </div>
+      )}
       <div className="heartShapedBox">
         {slide.saved ? <img className="pink_heart" src="https://souperhost.s3-us-west-2.amazonaws.com/pinkheart.png" alt="" /> : (
           <img

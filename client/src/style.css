@@ -24,6 +24,7 @@ body {
   width: 100%;
 }
 div {
+  display: block;
   margin: 0;
   padding-bottom: 0;
 }
@@ -139,7 +140,7 @@ header
   color: #222222;
   -webkit-box-pack: justify !important;
   -webkit-box-align: center !important;
-  display: flex !important;
+  display: flex;
   align-items: center !important;
   justify-content: space-between !important;
   padding-bottom: 24px !important;
@@ -163,9 +164,9 @@ header
 }
 
 /*
-=================
+==================================
 Carousel
-=================
+==================================
 */
 
 .display {
@@ -207,9 +208,9 @@ Carousel
 }
 
 /*
-=================
+==================================
 image overlay
-=================
+==================================
 */
 
 .souperhost_box {
@@ -321,9 +322,9 @@ image overlay
 }
 
 /*
-=================
+==================================
 slide text
-=================
+==================================
 */
 
 .star {
@@ -395,4 +396,290 @@ slide text
   line-height: 18px !important;
   margin-bottom: 6px;
   margin-top:4px;
+}
+
+/*
+==================================
+Modal
+==================================
+*/
+
+.modal_container {
+  -webkit-box-pack: center !important;
+  -webkit-box-align: end !important;
+  -webkit-box-direction: normal !important;
+  -webkit-box-orient: horizontal !important;
+  z-index: 2000 !important;
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  padding-top: 12px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}
+
+.dim_effect {
+  z-index: 2000 !important;
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  overflow-y: auto !important;
+  background: rgb(34, 34, 34) !important;
+  animation-duration: 400ms !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: both !important;
+  animation-name: start;
+}
+
+.modal {
+  width: 100% !important;
+  max-width: 568px !important;
+  border-radius: 12px !important;
+  -webkit-box-direction: normal !important;
+  -webkit-box-orient: vertical !important;
+  background: rgb(255, 255, 255) !important;
+  position: relative !important;
+  max-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px !important;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  animation-duration: 400ms !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: both !important;
+  animation-name: slide_up;
+}
+
+.dim_effect_close {
+  z-index: 2000;
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  overflow-y: auto !important;
+  background: rgb(34, 34, 34) !important;
+  animation-duration: 400ms !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: both !important;
+  animation-name: close;
+}
+
+@keyframes slide_up {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: 50vh;
+  }
+}
+
+@keyframes slide_down {
+  from {
+    bottom: 50vh;
+  }
+
+  to {
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes start {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 60%;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 60%;
+  }
+
+  to {
+    z-index: -1;
+    display: none;
+    opacity: 0%;
+  }
+}
+
+.x_box {
+  position: absolute !important;
+  display: flex !important;
+  top: 16px !important;
+  left: 24px !important;
+}
+
+.modal_header {
+  -webkit-box-pack: justify !important;
+  -webkit-box-align: center !important;
+  min-height: 64px !important;
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid rgb(235, 235, 235) !important;
+  padding: 0px 24px !important;
+  color: rgb(34, 34, 34) !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 800 !important;
+}
+
+.modal_header_text_box {
+  -webkit-box-flex: 0 !important;
+  overflow: hidden !important;
+  flex: 0 1 auto !important;
+  text-align: center !important;
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+}
+
+.spacer_left {
+  -webkit-box-flex: 0 !important;
+  flex: 0 0 16px !important;
+  text-align: left !important;
+}
+
+.spacer_right {
+  -webkit-box-flex: 0 !important;
+  flex: 0 0 16px !important;
+  text-align: right !important;
+}
+
+.x_button {
+  appearance: none !important;
+  display: inline-block !important;
+  border-radius: 50% !important;
+  border: none !important;
+  outline: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  color: rgb(34, 34, 34) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  background: transparent !important;
+  transition: transform 0.25s ease 0s !important;
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  z-index: 2000;
+}
+
+.x_button:hover {
+  background: rgb(247, 247, 247) !important;
+}
+
+.modal_middle {
+  padding: 20px 16px !important;
+  overflow-y: auto !important;
+}
+
+/*
+==================================
+middle of modal
+==================================
+*/
+
+.modal_middle_btn {
+  z-index: 2000;
+  cursor: pointer !important;
+  position: relative !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  font-weight: inherit !important;
+  border-radius: 0px !important;
+  outline: none !important;
+  transition: box-shadow 0.2s ease 0s, transform 0.1s ease 0s !important;
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  display: block !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  text-align: inherit !important;
+  text-decoration: none !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.modal_middle_div {
+  -webkit-box-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+}
+
+.modal_middle_btn:hover {
+  background: rgb(247, 247, 247) !important;
+}
+
+.modal_middle_btn_div {
+  -webkit-box-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+}
+
+.modal_picture_box {
+  margin-right: 16px !important;
+  height: 64px !important;
+  background: rgb(221, 221, 221) !important;
+  border-radius: 4px !important;
+}
+
+.modal_image {
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.modal_middle_text {
+  flex: 1 1 0% !important;
+}
+.anytime {
+  margin-bottom: 4px !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+  color: rgb(113, 113, 113) !important;
+}
+
+.saved_listings {
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+  color: rgb(34, 34, 34) !important;
+}
+
+.counted_stays {
+  font-size: 14px !important;
+  line-height: 18px !important;
+  font-weight: 400 !important;
+  margin-top: 4px !important;
+  color: rgb(34, 34, 34) !important;
 }

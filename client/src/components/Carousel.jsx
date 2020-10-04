@@ -3,19 +3,23 @@ import axios from 'axios';
 import CurrentPage from './CurrentPage';
 import SlideList from './SlideList';
 import ArrowButtons from './ArrowButtons';
+import SaveModal from './SaveModal';
 import '../style.css';
 
 require('regenerator-runtime');
 
 const Carousel = () => {
   const [listingData, setListingData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showSaveModal, setShowSaveModal] = useState(false);
   const [slideIdx, setSlideIdx] = useState(1);
   const [maxSlideIdx, setMaxSlideIdx] = useState(0);
+  const [selectedSlide, setSelectedSlide] = useState();
   const [style, setStyle] = useState({
     transition: 'transform ease-out 0.45s',
     transform: 'translateX(-0%)',
   });
+  const [savedCount, setSavedCount] = useState(0);
 
   useEffect(() => {
     let mounted = true;
@@ -36,22 +40,44 @@ const Carousel = () => {
     };
   }, []);
 
+  const toggleSave = (slide) => {
+    setSelectedSlide(slide);
+    if (!slide.saved) {
+      setShowSaveModal(true);
+    } else {
+      const updatedSlide = slide;
+      updatedSlide.saved = !slide.saved;
+      const updatedData = [...listingData.slice(0, (slide.listing_id - 1)),
+        updatedSlide,
+        ...listingData.slice(slide.listing_id)];
+      setListingData(updatedData);
+      setSavedCount(savedCount - 1);
+    }
+  };
+
+  const handleModalClick = () => {
+    setShowSaveModal(false);
+    const updatedSlide = selectedSlide;
+    updatedSlide.saved = !selectedSlide.saved;
+    const updatedData = [...listingData.slice(0, (selectedSlide.listing_id - 1)),
+      updatedSlide,
+      ...listingData.slice(selectedSlide.listing_id)];
+    setListingData(updatedData);
+    setSavedCount(savedCount + 1);
+  };
+
+  const handleModalClose = (e) => {
+    if (e.target.className === 'modal_container' || e.target.className === 'x_button') {
+      setShowSaveModal(false);
+    }
+  };
+
   useEffect(() => {
     setStyle({
       transition: 'transform ease-out 0.45s',
       transform: `translateX(-${((slideIdx - 1) * 100)}%)`,
     });
   }, [slideIdx]);
-
-  const toggleSave = (slide) => {
-    const updatedSlide = slide;
-    updatedSlide.saved = !slide.saved;
-    const updatedData = [...listingData.slice(0, (slide.listing_id - 1)),
-      updatedSlide,
-      ...listingData.slice(slide.listing_id)];
-
-    setListingData(updatedData);
-  };
 
   const handlePrev = () => {
     if (slideIdx !== 1) {
@@ -90,6 +116,13 @@ const Carousel = () => {
         <div className="title">
           <h2>More places to stay</h2>
         </div>
+        <div className={showSaveModal ? 'dim_effect' : 'dim_effect_close'} />
+        <SaveModal
+          savedCount={savedCount}
+          handleModalClose={handleModalClose}
+          handleModalClick={handleModalClick}
+          showSaveModal={showSaveModal}
+        />
         {isLoading ? (
           <div>Loading...</div>
         ) : (
@@ -104,11 +137,7 @@ const Carousel = () => {
           </div>
         )}
       </div>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        itemsToRender
-      )}
+      {!isLoading && itemsToRender}
     </div>
   );
 };

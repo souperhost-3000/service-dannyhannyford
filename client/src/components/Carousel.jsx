@@ -15,11 +15,11 @@ const Carousel = () => {
   const [slideIdx, setSlideIdx] = useState(1);
   const [maxSlideIdx, setMaxSlideIdx] = useState(0);
   const [selectedSlide, setSelectedSlide] = useState();
+  const [savedCount, setSavedCount] = useState(0);
   const [style, setStyle] = useState({
     transition: 'transform ease-out 0.45s',
     transform: 'translateX(-0%)',
   });
-  const [savedCount, setSavedCount] = useState(0);
 
   useEffect(() => {
     let mounted = true;
@@ -108,8 +108,6 @@ const Carousel = () => {
     );
   }
 
-  const prev = '<';
-  const next = '>';
   return (
     <div>
       <div className="header">
@@ -129,8 +127,6 @@ const Carousel = () => {
           <div className="rightSide">
             <CurrentPage currPage={slideIdx} lastPage={maxSlideIdx} />
             <ArrowButtons
-              prev={prev}
-              next={next}
               handlePrev={handlePrev}
               handleNext={handleNext}
             />

@@ -29,6 +29,7 @@ it('Renders a slide for each listing', () => {
       toggleSave={toggleSave}
     />,
   );
+  expect(wrapper.exists()).toBe(true);
   const slide = wrapper.find(Slide);
   expect(slide.exists()).toBe(true);
   const slides = wrapper.find('ul').children();

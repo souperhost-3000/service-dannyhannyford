@@ -3,8 +3,10 @@ import Carousel from './Carousel';
 import '../style.css';
 
 const App = () => (
-  <div>
-    <Carousel />
+  <div className="bodyWrapper">
+    <div className="wrapper">
+      <Carousel />
+    </div>
   </div>
 );
 

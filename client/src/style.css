@@ -3,7 +3,7 @@
 whole page
 =================
 */
-body {
+.bodyWrapper {
   background-color:#F7F7F7;
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@ body {
   color: #222222;
   box-sizing: border-box;
 }
-#app {
+.wrapper {
   width: 100%;
 }
 div {

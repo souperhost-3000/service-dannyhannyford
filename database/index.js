@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://localhost:27017/airbnb';
+const mongoUri = 'mongodb://database/airbnb';
 
 const db = mongoose.connect(mongoUri,
   { useNewUrlParser: true, useUnifiedTopology: true })

@@ -28,10 +28,4 @@ app.post('/api/listings:listing_id', (req, res) => {
     .catch((err) => res.send(err));
 });
 
-app.get('/api/listings', (req, res) => {
-  Place.find()
-    .then((data) => res.send(data))
-    .catch((err) => res.send(err));
-});
-
 module.exports = app;

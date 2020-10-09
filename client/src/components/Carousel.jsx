@@ -110,7 +110,7 @@ const Carousel = () => {
 
   return (
     <div>
-      <div className="header">
+      <div className="header_div">
         <div className="title">
           <h2>More places to stay</h2>
         </div>

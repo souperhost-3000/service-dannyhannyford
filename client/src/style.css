@@ -3,6 +3,10 @@
 whole page
 =================
 */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 #carousel {
   background-color:#F7F7F7;
   width:100%;

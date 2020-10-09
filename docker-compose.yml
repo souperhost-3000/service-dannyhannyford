@@ -3,7 +3,7 @@ version: '3'
 services:
   carousel:
     build: .
-    image: dantanna/service-dannyhannyford:1.0
+    image: dantanna/service-dannyhannyford:3.0
     depends_on:
       - 'database'
     ports:

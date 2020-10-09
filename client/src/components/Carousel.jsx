@@ -13,23 +13,34 @@ const Carousel = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [slideIdx, setSlideIdx] = useState(1);
-  const [maxSlideIdx, setMaxSlideIdx] = useState(0);
   const [selectedSlide, setSelectedSlide] = useState();
   const [savedCount, setSavedCount] = useState(0);
   const [style, setStyle] = useState({
     transition: 'transform ease-out 0.45s',
     transform: 'translateX(-0%)',
   });
+  const maxSlideIdx = 3;
 
   useEffect(() => {
     let mounted = true;
+    setIsLoading(true);
     const fetchData = async () => {
-      setIsLoading(true);
-      const { data } = await axios.get('/api/listings');
-      setListingData(data);
-      if (data) {
-        setMaxSlideIdx(Math.ceil(data.length / 4));
-      }
+      const nicePics = Array(4).fill(0);
+      const dataRange = Array(8).fill(0);
+      const nicePicsArray = await nicePics.map(async (e, idx) => {
+        const { data } = await axios.get(`/api/listings/${idx + 1}`);
+        return data;
+      });
+      const fetchDataArray = await dataRange.map(async () => {
+        const randomNumber = Math.floor(Math.random() * 96 + 5);
+        const { data } = await axios.get(`/api/listings/${randomNumber}`);
+        return data;
+      });
+      const allData = nicePicsArray.concat(fetchDataArray);
+      Promise.all(allData)
+        .then((result) => {
+          setListingData(result);
+        });
       setIsLoading(false);
     };
     if (mounted) {

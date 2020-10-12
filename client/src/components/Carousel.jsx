@@ -120,7 +120,7 @@ const Carousel = () => {
   }
 
   return (
-    <div>
+    <div className="carousel-line">
       <div className="header_div">
         <div className="title">
           <h2>More places to stay</h2>

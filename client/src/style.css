@@ -3,6 +3,15 @@
 whole page
 =================
 */
+.staticFooter {
+  width:100%;
+}
+
+.carousel-line {
+  border-bottom: 1px solid rgb(235, 235, 235);
+  padding-bottom: 30px;
+}
+
 body {
   margin: 0 !important;
   padding: 0 !important;
@@ -253,6 +262,10 @@ image overlay
   -webkit-box-orient: vertical !important;
   box-sizing: border-box;
 }
+.imageContainer {
+  max-height: 288px;
+  max-width: 512px;
+}
 
 .image {
   border-radius: 12px;
@@ -261,6 +274,7 @@ image overlay
   padding: 0;
   cursor: pointer;
   max-width: 100%;
+  max-height: 288px;
 }
 
 .heartButton {

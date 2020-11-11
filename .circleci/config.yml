@@ -4,10 +4,10 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:14.15
+      - image: cimg/node:14.15.0
       - image: circleci/mongo:4.4.1-ram
     steps:
       - checkout
       - run: npm install
-      - run: npm start
+      - run: npm run build
       - run: npm test

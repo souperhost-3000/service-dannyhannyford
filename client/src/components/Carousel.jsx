@@ -29,7 +29,6 @@ const Carousel = () => {
       const listingId = listing ? listing[1] : 1;
       axios.get(`/api/listings/${listingId}`)
         .then(({ data }) => {
-          console.log(data);
           setListingData(data);
         })
         .then(() => setIsLoading(false));

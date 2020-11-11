@@ -12,13 +12,13 @@ const app = express();
 app.use(compression());
 app.use(bodyParser.json());
 app.use(express.static(PUBLIC_DIR));
-app.get('/', (req, res) => {
-  res.send(200);
-});
+app.use('/listings/:num', express.static(PUBLIC_DIR));
 
 app.get('/api/listings/:listing_id', (req, res) => {
   const id = req.params.listing_id;
-  Place.findOne({ listing_id: id })
+  const start = id - 1;
+  const end = Number(id) + 12;
+  Place.find({ listing_id: { $gt: start, $lt: end } })
     .then((data) => res.send(data))
     .catch((err) => res.send(err));
 });

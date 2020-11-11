@@ -10,4 +10,4 @@ services:
       - '80:3007'
 
   database:
-    image: mongo:4.4.1
+    image: mongo:4.4.4

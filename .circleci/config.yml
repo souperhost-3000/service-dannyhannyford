@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:15.1.0
+      - image: circleci/node:15.2.0
       - image: circleci/mongo:4.4.1-ram
     steps:
       - checkout

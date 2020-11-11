@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node database/seed.js && node server/start.js",
-    "start-dev": "nodemon server/start.js",
+    "start-dev": "node server/start.js",
     "build": "webpack -p --mode=production",
     "test": "jest --coverage",
     "seed": "node database/seed.js",

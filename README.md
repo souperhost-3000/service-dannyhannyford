@@ -20,8 +20,8 @@
 
 ## Usage
 
-> npm run seed to seed the database
-> npm run start-dev to start the server on port:3007
+> npm run build to create the bundle
+> npm run start to seed the database and start the server on port:3007
 
 ## Requirements
 

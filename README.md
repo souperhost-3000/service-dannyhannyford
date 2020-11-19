@@ -32,7 +32,7 @@ Build your webpack bundle
 
 Start your server
 
-`$ npm start-local`
+`$ npm run start-local`
 > starts the server on port:3007
 
 ## Usage

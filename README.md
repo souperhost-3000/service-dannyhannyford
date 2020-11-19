@@ -22,13 +22,14 @@ Install dependencies
 `npm install`
 
 Seed database if necessary
-
 `npm run seed`
 > seeds your mongoDB with 100 listings
 
+Build your webpack bundle
+`npm run build`
 
 Start your server
-`npm start`
+`npm start-local`
 > starts the server on port:3007
 
 ## Related Projects

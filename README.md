@@ -1,43 +1,41 @@
 [![souperhost-3000](https://circleci.com/gh/souperhost-3000/service-dannyhannyford.svg?style=shield)](https://circleci.com/gh/souperhost-3000/service-dannyhannyford)
 
-# Readme: Front-End Capstone Project
+# SouperHost: More places to stay
 
-# AirBnB More places to stay
+> This react application is an image carousel. The client fetches data with express connecting it to mongoDB.
 
-> This react project mocks the "More places to stay" image carousel. The client fetches data with express connecting it to a mongoDB server.
-
-## Related Projects
-
-  - https://github.com/souperhost-3000/service-chris
-  - https://github.com/souperhost-3000/service-eric
-  - https://github.com/souperhost-3000/service-day-glow
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> npm run seed to seed the database
-> npm run start-dev to start the server on port:3007
+![Image of places to stay](https://i.imgur.com/6fTc2k8.png)
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
-- etc
+- Node >= 6.13.0
+- MongoDB 4.4.1
 
-## Development
+## Getting Started
 
-### Installing Dependencies
+clone this repository
+`$ git clone https://github.com/souperhost-3000/service-dannyhannyford.git`
 
-From within the root directory:
+Install dependencies
+`npm install`
 
-```sh
-npm install -g webpack
-npm install
-```
+Seed database if necessary
 
+`npm run seed`
+> seeds your mongoDB with 100 listings
+
+
+Start your server
+`npm start`
+> starts the server on port:3007
+
+## Related Projects
+
+  - [Reviews](https://github.com/souperhost-3000/service-chris)
+  - [Gallery](https://github.com/souperhost-3000/service-eric)
+  - [Availability Calendar](https://github.com/souperhost-3000/service-day-glow)
+
+## Table of Contents
+1. [Requirements](#requirements)

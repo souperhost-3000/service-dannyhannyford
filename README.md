@@ -2,7 +2,7 @@
 
 # SouperHost: More places to stay
 
-> This image carousel module is part of the travel application souperhost:3000. The client fetches data from mongoDB through a local express server.
+This image carousel module is part of the travel application souperhost:3000. The client fetches data from mongoDB through a local express server.
 
 ![Image of places to stay](https://i.imgur.com/6fTc2k8.png)
 
@@ -14,21 +14,30 @@
 ## Getting Started
 
 clone this repository
+
 `$ git clone https://github.com/souperhost-3000/service-dannyhannyford.git`
 
 Install dependencies
+
 `$ npm install`
 
 Seed database if necessary
+
 `$ npm run seed`
-> seeds your mongoDB with 100 listings
+> seeds your local mongoDB server with 100 listings
 
 Build your webpack bundle
+
 `$ npm run build`
 
 Start your server
+
 `$ npm start-local`
 > starts the server on port:3007
+
+## Usage
+
+`Running locally instructions coming soon`
 
 ## Related Projects
 

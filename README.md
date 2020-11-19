@@ -2,7 +2,7 @@
 
 # SouperHost: More places to stay
 
-> This react application is an image carousel. The client fetches data with express connecting it to mongoDB.
+> This image carousel module is part of the travel application souperhost:3000. The client fetches data from mongoDB through a local express server.
 
 ![Image of places to stay](https://i.imgur.com/6fTc2k8.png)
 
@@ -17,17 +17,17 @@ clone this repository
 `$ git clone https://github.com/souperhost-3000/service-dannyhannyford.git`
 
 Install dependencies
-`npm install`
+`$ npm install`
 
 Seed database if necessary
-`npm run seed`
+`$ npm run seed`
 > seeds your mongoDB with 100 listings
 
 Build your webpack bundle
-`npm run build`
+`$ npm run build`
 
 Start your server
-`npm start-local`
+`$ npm start-local`
 > starts the server on port:3007
 
 ## Related Projects

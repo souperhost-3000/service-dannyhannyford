@@ -2,7 +2,7 @@
 
 # SouperHost: More places to stay
 
-> This react project mocks the "More places to stay" image carousel. The client fetches data with express connecting it to a mongoDB server.
+> This react application is an image carousel. The client fetches data with express connecting it to mongoDB.
 
 ![Image of places to stay](https://i.imgur.com/6fTc2k8.png)
 
@@ -33,9 +33,9 @@ Start your server
 
 ## Related Projects
 
-  - https://github.com/souperhost-3000/service-chris
-  - https://github.com/souperhost-3000/service-eric
-  - https://github.com/souperhost-3000/service-day-glow
+  - [Reviews](https://github.com/souperhost-3000/service-chris)
+  - [Gallery](https://github.com/souperhost-3000/service-eric)
+  - [Availability Calendar](https://github.com/souperhost-3000/service-day-glow)
 
 ## Table of Contents
 1. [Requirements](#requirements)

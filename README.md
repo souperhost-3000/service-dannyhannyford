@@ -4,7 +4,7 @@
 
 This image carousel module is part of the travel application souperhost:3000. The client fetches listings data from mongoDB through a local express server.
 
-![Image of places to stay](https://i.imgur.com/6fTc2k8.png)
+![Carousel Demo](./demo.gif)
 
 ## Requirements
 

@@ -4,7 +4,7 @@
 
 > This react application is an image carousel. The client fetches data with express connecting it to mongoDB.
 
-![Image of places to stay](https://i.imgur.com/6fTc2k8.png)
+![Carousel Demo](./demo.gif)
 
 ## Requirements
 

@@ -25,3 +25,5 @@ dist/
 #
 public/bundle.js
 globalConfig.json
+
+package-lock.json
